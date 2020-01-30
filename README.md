@@ -53,7 +53,7 @@ Jednak nie było to poprawa znacząca. Aktualnie wyniki oscylowały w okolicach 
 
 ## Zmiana ResNetu
 
-Na tym etapie też zauważyłem że biblioteka z której korzystałem - *keras*, posiada więcej niż jedną wersję ResNetu. Jest ResNet50 z którego do tej pory korzystałem, ale jest ResNet101 i ResNet152 oraz cała rodzina ResNetV2.
+Na tym etapie też zauważyłem że biblioteka z której korzystałem - *keras*, posiada więcej niż jedną wersję ResNetu. Jest ResNet50 z którego do tej pory korzystałem, ale jest też ResNet101 i ResNet152 oraz cała rodzina ResNetV2.
 
 Uznałem że może zmiana na któryś z nich polepszy moje wyniki.
 
