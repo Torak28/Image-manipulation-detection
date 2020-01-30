@@ -8,9 +8,9 @@ W ramach trwania projektu chciałem stworzyć model który byłby w stanie sklas
 
 ## Baza zdjęć(dataset)
 
-Pierwszym punktem przy realizacji tego projektu było znalezienie odpowiedniego zboru danych. Uznałem, że najlepszy będzie zbiór posiadający najwięcej zdjęć oraz zapewniający ich różnorodność. W pracach naukowych dotykających tej tematyki można często sie spotkać z danymi skupionymi wokół, np. ludzkiej twarzy, czy skupionych na np. wykrywaniu tylko efektu duplikacji części zdjęcia w ramach jego samego.
+Pierwszym punktem przy realizacji tego projektu było znalezienie odpowiedniego zbioru danych. Uznałem, że najlepszy będzie zbiór posiadający najwięcej zdjęć oraz zapewniający ich różnorodność. W pracach naukowych dotykających tej tematyki można często sie spotkać z danymi skupionymi wokół, np. ludzkiej twarzy, czy skupionych na np. wykrywaniu tylko efektu duplikacji części zdjęcia w ramach jego samego.
 
-Zdecydowałem na zbiór PS-Battles Dataset([źródło](https://github.com/dbisUnibas/ps-battles)). Zbiór ten został przygotowany na potrzeby konkursu i zawiera sumarycznie 102 028 zdjęć. Niestety, co zauważyłem na tym etapie, a raczej nie zdawałem sobie sprawy z problemu jaki posiada użyty zbiór danych. Jest on znacząco niezbalansowany, na każde zdjęcie naturalne przypada ok. 7,9 podróbek. Tym samym zdjęcia originalne to tylko 10% całego datasetu.
+Zdecydowałem na zbiór PS-Battles Dataset([źródło](https://github.com/dbisUnibas/ps-battles)). Zbiór ten został przygotowany na potrzeby konkursu o tematyce mojej pracy i zawiera sumarycznie 102 028 zdjęć. Niestety, czego nie zauważyłem na tym etapie, a raczej, z czego nie zdałem sobie sprawy, użyty zbiór danych jest znacząco niezbalansowany. Na każde zdjęcie naturalne przypada ok. 7,9 podróbek. Tym samym zdjęcia oryginalne to tylko 10% całego datasetu.
 
 ## Początkowy wybór modelu
 
@@ -20,7 +20,7 @@ Jednak pierwsze próby w których, po prostu użyłem nauczonego na imagenetcie 
 
 ![https://imgur.com/j9FErAx.png](https://imgur.com/j9FErAx.png)
 
-Wyniki oscylujące w okolicach 50-55% celności sprawiały że równie dobrze można by klasyfikować zdjęcia przez rzut monetą, albo przez funkcję `rand`
+Wyniki oscylujące w okolicach 50-55% celności sprawiały że równie dobrze można by klasyfikować zdjęcia przez rzut monetą, albo przez funkcję `rand()`.
 
 ## Dostrajanie hiperparametrów
 
@@ -33,13 +33,13 @@ I tak sprawdzałem:
  * która funkcja straty daje najwięcej(*mse*, *categorical_crossentropy*),
  * oraz wpływ generowania nowych/zmieniania danych poprzez augmentacje(obrót i przybliżenie)
 
-Uzyskane wyniki znacząco się od siebie różniły, co początkowo traktowałem jako dobrą kartę. Okazało się jednak -  po wygenerowaniu macierzy konfuzji, że mój klasyfikator po prostu etykietował wszystkie dane jako *fałszywki*, przez to że jest ich znacznie więcej w porównaniu do zdjęć normalnych. Oczywiście w tym momencie cały eksperyment stał się skażony i jego wyniki nie były żadna informacją.
+Uzyskane wyniki znacząco się od siebie różniły, co początkowo traktowałem jako dobrą kartę. Okazało się jednak -  po wygenerowaniu macierzy konfuzji, że mój klasyfikator po prostu etykietował wszystkie dane jako *fałszywki*, przez to że jest ich znacznie więcej w porównaniu do zdjęć normalnych. Oczywiście w tym momencie cały eksperyment stał się skażony i jego wyniki nie były już żadną przydatną informacją.
 
 ## Zbiór referencyjny
 
 Uznałem więc że skorzystam z podobnego problemu, najlepiej już opisanego. Tak żeby wyznaczyć sobie na prostych danych pewne trendy i potem przenieść je na mój model. Skupiłem się na problemie klasyfikacji Kota i Psa, jako że podobnie jak w moim przypadku mamy do czynienia z dwoma klasami.
 
-Niestety nawet dla takich łatwo klasyfikowanych danych różnice w hiperparametrach niebyły dość znaczące. udało mi tylko ustali żę *average_pooling* jest lekko lepszy od *mas_poolingu*.
+Niestety nawet dla takich łatwo klasyfikowanych danych różnice w hiperparametrach niebyły dość znaczące. Udało mi się tylko ustalić że *average_pooling* jest lekko lepszy od *max_poolingu*.
 
 ## Próba zmiany danych
 
@@ -73,7 +73,7 @@ Jak widać moja wcześniejsza obserwacja o przewadze poolingu typu *avg* nad *ma
 
 ![https://imgur.com/PxLoShK.png](https://imgur.com/PxLoShK.png)
 
-Na tym też etapie postanowiłem że torchę pozmienia moją sięć neuronową którą przedstawiam po zakończeniu działania samego ResNetu. Powyższy wynik(który zdradzę żeby najlepszy) został uzyskany na takim wyglądzie sieci:
+Na tym też etapie postanowiłem że trochę pozmienia moją sięć neuronową którą przedstawiam po zakończeniu działania samego ResNetu. Powyższy wynik(który zdradzę żeby najlepszy) został uzyskany na takim wyglądzie sieci:
 
 ```
 Layer (type)                 Output Shape              Param #   
@@ -103,7 +103,7 @@ Niestety, wyniki dla ResNetuV2 się pogorszyły, nawet do momentu <50%
 
 ## Uczenie na 'czystym' modelu
 
-W dalszej cześci pomyślałem że ciekawym pomysłem byłoby nauczenie ResNetu samemu, nie wykorzystując wag jakie posiada z Imagenetu. Nie spodziewałem się po tym zabiegu jakiejkolwiek poprawy - miałem za małą ilość zdjęć by takie nauczanie mogło by być efektywne. Co ciekawe wszystkie wyniki oscylowały w okolicach dokładnie 50%
+W dalszej części pomyślałem że ciekawym pomysłem byłoby nauczenie ResNetu samemu, nie wykorzystując wag jakie posiada z Imagenetu. Nie spodziewałem się po tym zabiegu jakiejkolwiek poprawy - miałem za małą ilość zdjęć by takie nauczanie mogło by być efektywne. Co ciekawe wszystkie wyniki oscylowały w okolicach dokładnie 50%
 
 ```json
 {
@@ -157,4 +157,4 @@ Niestety ale dla tego przykładu nie znalazłem czasu na implementacje, a sami t
 
 ## Wnioski
 
-Ewidentnie projekt mnie przerósł. Z jednej strony jest to na pewno problem tego że to moja pierwsza styczność z sieciami głębokimi i brakowało mi czesto wiedzy i intuicji. Z innej, wybrany temat wydaje mi sie trochę zbyt wysoko wysoki ustawioną poprzeczką dla grupy jednoosobowej.
+Ewidentnie projekt mnie przerósł. Z jednej strony jest to na pewno problem tego że to moja pierwsza styczność z sieciami głębokimi i brakowało mi często wiedzy i intuicji. Z innej, wybrany temat wydaje mi sie trochę zbyt wysoko wysoki ustawioną poprzeczką dla grupy jednoosobowej.
