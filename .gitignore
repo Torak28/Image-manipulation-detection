@@ -1,4 +1,2 @@
 .ipynb_checkpoints
-test_resnet50.h5
-svm100.joblib
-model.cppickl
+.venv
