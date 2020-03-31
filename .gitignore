@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 .venv
 /data
+/PoC - CNN/best.h5
+/PoC - CNN/the_best.h5
