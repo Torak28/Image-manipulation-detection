@@ -3,3 +3,6 @@
 /data
 /PoC - CNN/best.h5
 /PoC - CNN/the_best.h5
+/PoC - ResNet/best.h5
+/PoC - ResNet/the_best_fn.h5
+/PoC - ResNet/the_best_v.h5
