@@ -2,7 +2,10 @@
 .venv
 /data
 /PoC - CNN/best.h5
-/PoC - CNN/the_best.h5
+/PoC - CNN/the_best_CD.h5
+/PoC - CNN/the_best_P.h5
 /PoC - ResNet/best.h5
-/PoC - ResNet/the_best_fn.h5
-/PoC - ResNet/the_best_v.h5
+/PoC - ResNet/the_best_fn_CD.h5
+/PoC - ResNet/the_best_P.h5
+/PoC - ResNet/the_best_v_CD.h5
+/PoC - ResNet/the_best_P.h5
