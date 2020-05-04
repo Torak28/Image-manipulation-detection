@@ -1,19 +1,6 @@
 .ipynb_checkpoints
 .venv
 /data
-/PoC - CNN/best.h5
-/PoC - CNN/the_best_CD.h5
-/PoC - CNN/the_best_P.h5
-/PoC - ResNet/best.h5
-/PoC - ResNet/the_best_fn_CD.h5
-/PoC - ResNet/the_best_fn_P.h5
-/PoC - ResNet/the_best_fn_P_v2.h5
-/PoC - ResNet/the_best_v_CD.h5
-/PoC - ResNet/the_best_v_P.h5
-/PoC - ResNet/the_best_v_P_v2.h5
-/PoC - SVM/best.h5 
-/PoC - SVM/the_best_CD.h5 
-/PoC - SVM/the_best_P.h5
-/PoC - SVM/data_CatssDogs.h5
-/PoC - SVM/dataframe.csv
-/PoC - SVM/labels_CatssDogs.h5
+
+*.h5 
+*.csv
