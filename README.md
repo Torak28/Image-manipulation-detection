@@ -2,10 +2,10 @@
 
 ![gif](https://i.giphy.com/media/3o6ZsX2OZJ8G3Tec6Y/giphy.webp)
 
-## Temat 
+## Temat pracy:
 
- * **PL**: Detekcja manipulacji zawartości zdjęcia przy pomocy metod głębokiego uczenia
- * **ENG**: Image manipulation detection using deep learning techniques
+ * (*j. polski*) Detekcja manipulacji zawartości zdjęć przy pomocy metod uczenia głębokiego
+ * (*j. angielski*) Image manipulation detection using deep learning techniques
 
 
 ### Cel i zakres pracy:
@@ -15,6 +15,30 @@ Wraz z postępem technologicznym i dostępem do coraz bardziej zaawansowanych na
 
 Chciałbym przy pomocy metod głębokiego uczenia zbudować aplikację rozpoznającą czy dane zdjęcie zostało poddane obróbce, czy nie. Aplikacja nie tylko miałaby klasyfikować obrazy ale też pokazywać, który obszar zdjęcia uważa za zmieniony, niepoprawny.
 
+### Aspekt badawczy:
+
+ * Selekcja odpowiednich metod ewaluacji,
+ * Analiza istniejących metod w obrębie dziedziny,
+ * Autorska metoda wykorzystania uczenia głębokiego w detekcji falsyfikacji zdjęć,
+ * Projekt eksperymentów,
+ * Interpretacja uzyskanych wyników.
+
+### Aspekt inżynierski:
+
+ * Implementacja środowiska ramowego wykorzystującego istniejące architektury sieci,
+ * Implementacja autorskiej metody wykorzystania uczenia głębokiego w zadaniu klasyfikacji.
+
+### Zadania do wykonania:
+
+ - [x] Sformułowanie zadania,
+ - [x] Analiza istniejących metod w obrębie dziedziny,
+ - [x] Wybór metody ewaluacji badań,
+ - [x] Selekcja danych testowych,
+ - [x] Selekcja algorytmów wykorzystywanych w testach,
+ - [x] Implementacja środowiska ramowego wykorzystującego istniejące architektury sieci,
+ - [ ] Autorska metoda wykorzystania uczenia głębokiego w detekcji falsyfikacji zdjęć,
+ - [ ] Przeprowadzenie ewaluacji eksperymentalnej wprowadzonych metod,
+ - [ ] Redakcja pracy.
 
 ### Literatura:
 
@@ -35,11 +59,4 @@ Chciałbym przy pomocy metod głębokiego uczenia zbudować aplikację rozpoznaj
  * Silvan Heller, Luca Rossetto, Heiko Schuldt. (2018). *The PS-Battles Dataset - an Image Collection for Imagge Manipulation Detection*. [link](https://arxiv.org/abs/1804.04866)
 
 
-### Zadania do wykonania:
-
-1. Przegląd literatury
-2. Stworzenie Zbioru Danych
-   1. PoC z użyciem istniejącego modelu, w celu sprawdzenia wielkości datasetu
-3. Konstrukcja odpowiedniej sieci neuronowej
-   1. Dalsza optymalizacja modelu
-4. Przeprowadzenie walidacji modelu i testów
+![xd](https://media.giphy.com/media/6cFcUiCG5eONW/giphy.gif)
