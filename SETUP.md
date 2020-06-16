@@ -1,5 +1,5 @@
 
-![alt](https://media.giphy.com/media/5wWf7H89PisM6An8UAU/giphy.gif)
+![alt](https://media.giphy.com/media/LKTTAzGboJGzC/giphy.gif)
 
 # Create a virtual environment
 
