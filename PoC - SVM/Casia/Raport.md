@@ -7,6 +7,7 @@ Przygotowane notebooki:
  - [SVM - Casia.ipynb](https://github.com/Torak28/Image-manipulation-detection/blob/master/PoC%20-%20SVM/Casia/SVM%20-%20Casia.ipynb)
  - [SVM - Casia_256.ipynb](https://github.com/Torak28/Image-manipulation-detection/blob/master/PoC%20-%20SVM/Casia/SVM%20-%20Casia_256.ipynb)
  - [SVM - Casia - skalar first.ipynb](https://github.com/Torak28/Image-manipulation-detection/blob/master/PoC%20-%20SVM/Casia/SVM%20-%20Casia%20-%20skalar%20first.ipynb)
+ - [SVM - Casia - SVC 2.ipynb](https://github.com/Torak28/Image-manipulation-detection/blob/master/PoC%20-%20SVM/Casia/SVM%20-%20Casia%20-%20SVC%202.ipynb)
 
 
 ## Założone stałe dotyczące zdjęcia
@@ -137,6 +138,8 @@ Whether to enable probability estimates. This must be enabled prior to calling f
 ```
 
 Z czego rozumiem że dla naszych potrzeb i dla naszych obliczeń(już wykonane 5v) jest nie potrzebne. W momencie w którym to piszę właśnie puściłem liczenie dla `probability` na `False`. Jak tylko uzyskam wynik - pojawi się to pewnie na githubie :octocat:.
+
+> ODP: Wynik pozostał niezmieniony.
 
 > Rozumiem że powinienem policzyć wersje dla innych kerneli. Dotychczas w takich wypadkach zdawałem się na GridSearcha. Jednak inne przypadki liczyły się dużo krócej(do 10 min jeden). Czy w tym wypadku mogę po prostu na *ślepo* wybrać inny kernel, czy nie jest to do końca zgodne ze sztuką.
 
