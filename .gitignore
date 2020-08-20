@@ -2,7 +2,7 @@
 .venv
 /data
 
-/Poc - SVM/Casia/tmp.jpg
+/Poc - SVM/Casia/*.jpg
 
 *.h5 
 *.csv
