@@ -3,6 +3,7 @@
 /data
 
 /Poc - SVM/Casia/*.jpg
+/Poc - SVM/Photos/*.jpg
 
 *.h5 
 *.csv
