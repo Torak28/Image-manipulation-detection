@@ -5,6 +5,8 @@
 /Poc - SVM/Casia/*.jpg
 /Poc - SVM/Photos/*.jpg
 
+.tmp*
+
 *.h5 
 *.csv
 *.npy
