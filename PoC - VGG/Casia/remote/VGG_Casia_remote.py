@@ -25,7 +25,7 @@ Folder Casia:
  * '../../data/Casia'
 '''
 
-dir_path = '../../data/Photos'
+dir_path = 'D:/Studia/Magisterka/Image-manipulation-detection/data/Casia'
 A_folder = 'originals'
 B_folder = 'photoshops'
 
@@ -583,7 +583,6 @@ ax3.set_xlabel('epoch')
 
 
 # plt.tight_layout()
-plt.show()
 fig.savefig('history.png')
 
 
