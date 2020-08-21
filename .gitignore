@@ -5,6 +5,9 @@
 /Poc - SVM/Casia/*.jpg
 /Poc - SVM/Photos/*.jpg
 
+/Poc - CNN/Casia/*.jpg
+/Poc - CNN/Photos/*.jpg
+
 .tmp*
 
 *.h5 
