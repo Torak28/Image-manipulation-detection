@@ -8,6 +8,9 @@
 /Poc - CNN/Casia/*.jpg
 /Poc - CNN/Photos/*.jpg
 
+/Poc - VGG/Casia/*.jpg
+/Poc - VGG/Photos/*.jpg
+
 .tmp*
 
 *.h5 
