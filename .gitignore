@@ -2,14 +2,14 @@
 .venv
 /data
 
-/Poc - SVM/Casia/*.jpg
-/Poc - SVM/Photos/*.jpg
+/Poc - SVM/Casia/results/*.png
+/Poc - SVM/Photos/results/*.png
 
-/Poc - CNN/Casia/*.jpg
-/Poc - CNN/Photos/*.jpg
+/Poc - CNN/Casia/results/*.png
+/Poc - CNN/Photos/results/*.png
 
-/Poc - VGG/Casia/*.jpg
-/Poc - VGG/Photos/*.jpg
+/Poc - VGG/Casia/results/*.png
+/Poc - VGG/Photos/results/*.png
 
 .tmp*
 
