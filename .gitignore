@@ -23,3 +23,11 @@
 *.out
 *.synctex.gz
 *.toc
+*.bbl
+*.blg
+*.lof
+*.lot
+
+*.sty
+*.bst
+*.cls
