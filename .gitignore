@@ -18,3 +18,8 @@
 *.npy
 *.txt
 *.7z
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
