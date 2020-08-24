@@ -36,8 +36,8 @@ Chciałbym przy pomocy metod głębokiego uczenia zbudować aplikację rozpoznaj
  - [x] Selekcja danych testowych,
  - [x] Selekcja algorytmów wykorzystywanych w testach,
  - [x] Implementacja środowiska ramowego wykorzystującego istniejące architektury sieci,
- - [ ] Autorska metoda wykorzystania uczenia głębokiego w detekcji falsyfikacji zdjęć,
- - [ ] Przeprowadzenie ewaluacji eksperymentalnej wprowadzonych metod,
+ - [x] Autorska metoda wykorzystania uczenia głębokiego w detekcji falsyfikacji zdjęć,
+ - [x] Przeprowadzenie ewaluacji eksperymentalnej wprowadzonych metod,
  - [ ] Redakcja pracy.
 
 ### Literatura:
