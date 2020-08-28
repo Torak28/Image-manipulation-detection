@@ -2,9 +2,9 @@
 
 Alan Turing w swojej pracy z 1950 roku \textit{Computing Machinery and Inteligence}\cite{turing} zdefiniował pojęcie \textit{obiekcji lady Lovelace}. Odnosiło się ono do krótkiej notatki\cite{lovelace} jaką lady Ada Lovelace poczyniła w 1843 roku podczas tłumaczenia na język angielski artykułu Luigi Menabrea\cite{menabrea}, który to był streszczeniem wykładu Charlesa Babbage'a wygłoszonego w Turynie w 1841 roku. Wykład dotyczył projektu maszyny analitycznej której zadaniem było zautomatyzowanie niektórych obliczeń związanych z analizą matematyczną. Pojęcie to brzmi następująco:
 \begin{center}
-	\textit{Maszyna analityczna nie ma na celu zapoczątkowania czegokolwiek. Może wykonywać operacje, które możemy kazać je przeprowadzać... Jej celem jest zwiększanie dostępności tego co umiemy już wykonać}\cite{turing}
+	\textit{Maszyna analityczna nie ma na celu zapoczątkowania czegokolwiek. Może wykonywać operacje, które możemy kazać jej przeprowadzać... Jej celem jest zwiększanie dostępności tego co umiemy już wykonać}\cite{turing}
 \end{center}
-Turing, przywołał to pojęcie, zastanawiając się nad tym, czy komputery mogą się uczyć, tworzyć nowe rzeczy. Jak piszę on dalej w swoim artykule: problem jest natury programistycznej i wymaga on stworzenia zupełnie innego, jak na tamte czasy, środowiska i sposobu pojmowania nauczania jako takiego. Wierzył jednak, że jest to możliwe.
+Turing, przywołał to pojęcie, zastanawiając się nad tym, czy komputery mogą się uczyć, tworzyć nowe rzeczy. Jak piszę on dalej w swoim artykule\cite{turing}: problem jest natury programistycznej i wymaga on stworzenia zupełnie innego, jak na tamte czasy, środowiska i sposobu pojmowania nauczania jako takiego. Wierzył jednak, że jest to możliwe.
 \\
 
 Termin \textit{Uczenie Maszynowe} po raz pierwszy pojawił się w 1959 roku w pracy naukowej autorstwa Arthura Samuela:
@@ -73,13 +73,12 @@ Na zbiór uczący $Z_{u}$ składa się zbiór $n$ wektorów, gdzie każdy z nich
 	Z_{u}=\left \{(x_{1},y_{1}),...,(x_{n},y_{n})\right \}
 	\label{eqn:zbiot_t}
 \end{equation}
-I tak w powyższym równaniu $i$-ty wektor oznaczony jest jako $x_{i}$ i odpowiada mu etykieta oznaczona jako $y_{i}$. W zależności od typu danych przechowywanych pod etykietą będziemy mieć do czynienia z zadaniem klasyfikacji(etykieta należy do skończonego i przeliczalnego zbioru) lub regresji(wartości przyjmowane przez etykietę należą do przestrzeni ciągłej). Ważne żeby dodać że na wektor $x_{i}$ może składać się $m$-liczb, gdzie każdą z tych liczb będziemy nazywać atrybutem lub cechą danego wektora(patrz wzór \ref{eqn:wek}):
+I tak w powyższym równaniu\ref{eqn:zbiot_t}) $i$-ty wektor oznaczony byłby jako $x_{i}$ i odpowiadałaby mu etykieta oznaczona jako $y_{i}$. W zależności od typu danych przechowywanych pod etykietą będziemy mieć do czynienia z zadaniem klasyfikacji(etykieta należy do skończonego i przeliczalnego zbioru) lub regresji(wartości przyjmowane przez etykietę należą do przestrzeni ciągłej). Ważne żeby dodać że na wektor $x_{i}$ może składać się $m$-liczb, gdzie każdą z tych liczb będziemy nazywać atrybutem lub cechą danego wektora(patrz wzór \ref{eqn:wek}):
 \begin{equation}
 	x_{i} = \left \{ x_{1,m}, ..., x_{i,m} \right \}
 	\label{eqn:wek}
 \end{equation}
-
-Etykietą zaś, w tym rozumowaniu, oznaczamy prawdziwą wartość funkcji, którą to chcemy by nasz algorytm odwzorował. Algorytm ten, nazywamy również modelem i opisujemy go jako następującą funkcję $f$(patrz wzór \ref{eqn:func_f}):
+Etykietą $y_{i}$, w tym rozumowaniu, oznaczamy prawdziwą wartość funkcji, którą to chcemy by nasz algorytm odwzorował. Algorytm ten, nazywamy również modelem i opisujemy go jako następującą funkcję $f$(patrz wzór \ref{eqn:func_f}):
 \begin{equation}
 	f(x): x \in X \mapsto y \in Y
 	\label{eqn:func_f}
@@ -93,6 +92,8 @@ Przykładem metryk stosowanych w uczeniu maszynowym są między innymi dokładno
 omówione zostały szczegółowo w dalszej części rozdziału.
 \\
 
+\section{Problem przeuczania, niedouczania}
+
 Wykorzystanie osobnego zbioru do badania jakości modelu w uczeniu nadzorowanym związane jest bezpośrednio z takimi problemami jak nadmierne dopasowanie, przeuczenia(ang. \textit{overfitting}) oraz niedouczenie (ang. \textit{underfitting})\cite{hands_on}. Zadaniem, które dobrze nadaje się do graficznej ilustracji powyższych problemów jest regresja liniowa. Jak już zostało opisane powyżej w problemie tym, etykiety
 przykładów są liczbami należącymi do przestrzeni ciągłej, a zadaniem algorytmu jest wyznaczenie funkcji f(patrz wzór \ref{eqn:reg}):
 \begin{equation}
@@ -102,7 +103,7 @@ przykładów są liczbami należącymi do przestrzeni ciągłej, a zadaniem algo
 Dodatkowo dla lepszej interpretacji graficznej każdy wektor w przestrzeni $x$ będzie posiadał tylko jedną cechę. Przykład prawidłowego dopasowania wygląda następująco(patrz rysunek \ref{fig:probki}):
 
 \begin{figure}[h!]
-	\includegraphics[width=7cm]{good.png}
+	\includegraphics[width=6cm]{good.png}
 	\centering
 	\caption{Przykład prawidłowego dopasowania}
 	\label{fig:probki}
@@ -111,7 +112,7 @@ Dodatkowo dla lepszej interpretacji graficznej każdy wektor w przestrzeni $x$ b
 Problem nadmiernego dopasowania cechuje się tym, że taki model zbyt mocno generuje charakterystykę dla danych trenujących, zawierając w niej również występujące tam szumy(patrz rysunek \ref{fig:overfitting}):
 
 \begin{figure}[h!]
-	\includegraphics[width=7cm]{overfitting.png}
+	\includegraphics[width=6cm]{overfitting.png}
 	\centering
 	\caption{Przykład nadmiernego dopasowania}
 	\label{fig:overfitting}
@@ -120,23 +121,93 @@ Problem nadmiernego dopasowania cechuje się tym, że taki model zbyt mocno gene
 Odwrotnym problem jest problem niedouczenia. Występuję on na przykład wtedy, kiedy zastosujemy zbyt prosty model w stosunku do poziomu skomplikowania zbioru danych. Wynik takiej operacji widoczny jest na rysunku \ref{fig:underfitting} 
 
 \begin{figure}[h!]
-	\includegraphics[width=7cm]{underfitting.png}
+	\includegraphics[width=6cm]{underfitting.png}
 	\centering
 	\caption{Przykład niedostatecznego dopasowania}
 	\label{fig:underfitting}
 \end{figure}
 
-\subsection{Miary jakości}
-
 \section{Zadanie klasyfikacji binarnej}
 
-\subsection{Maszyna wektorów nośnych(\textit{SVM})}
+W niniejszej pracy będę zajmował się zadaniem należącym do problemów klasyfikacji binarnej, czyli takiej w której przestrzeń etykiet ogranicza się do dwóch elementów(patrz wzór \ref{eqn:zbiot_y}):
+\begin{equation}
+	y=\left \{0, 1\right \}
+	\label{eqn:zbiot_y}
+\end{equation}
+Klasy $0$ i $1$ w powyższym wzorze\ref{eqn:zbiot_y} są przykładowe i bardziej niż ich wartość interesuje Nas liczność zbioru $y$. Tym samym mając zdefiniowaną przestrzeń możliwych wartości modelu można zdefiniować szereg miar, które są wykorzystywane do oceny jego wyników. Podstawowym elementem zadania ewaluacji modelu w zadaniu klasyfikacji binarnej jest macierz, tablica błędów widoczna w tabeli \ref{tab:macierz_bledow}. Do jej skonstruowania potrzebujemy oczywiście przetestować działanie naszego modelu na zbiorze testowym $Z_{t}$. Poszczególnym reprezentantom tego zbioru, przypisywane są pozytywne lub negatywne etykiety, teraz w zależności od tego czy dany element zbioru $x$ był faktycznie pozytywny czy negatywny można go wpisać w macierz błędów \ref{tab:macierz_bledow}.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|}
+		\cline{2-3}
+		&
+		\textbf{\begin{tabular}[c]{@{}c@{}}Klasyfikacja \\ pozytywna\end{tabular}} &
+		\textbf{\begin{tabular}[c]{@{}c@{}}Klasyfikacja \\ negatywna\end{tabular}} \\ \hline
+		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Stan \\ pozytywny\end{tabular}}} &
+		\begin{tabular}[c]{@{}c@{}}Prawdziwie dodatnia\\ (ang. \textit{true positive}, TP)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}Fałszywie ujemna\\ (ang. \textit{false negative}, FN)\end{tabular} \\ \hline
+		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Stan \\ negatywny\end{tabular}}} &
+		\begin{tabular}[c]{@{}c@{}}Fałszywie dodatnia\\ (ang. \textit{false positive}, FP)\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}Prawdziwie ujemna\\ (ang. \textit{true negative}, TN)\end{tabular} \\ \hline
+	\end{tabular}
+	\caption{Tablica pomyłek, możliwe wyniki klasyfikacji binarnej}
+	\label{tab:macierz_bledow}
+\end{table}
 
-\section{Głębokie sieci neuronowe}
+\section{Ewaluacja modelu - Miary jakości}
 
-\subsection{VGG}
+Korzystając z opisanej powyżej macierzy błędów \ref{tab:macierz_bledow} w łatwy sposób można przedstawić definicję szeregu miar do oceny modelu, z których to skorzystałem w niniejszej pracy:
+\begin{itemize}
+	\item \textbf{Dokładność} - procent poprawnych klasyfikacji, opisanych wzorem \ref{eqn:acc}:
+		\begin{equation}
+			\mathbf{accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+			\label{eqn:acc}
+		\end{equation}
+	\item \textbf{Czułość} - stosunek prawidłowych wyników pozytywnych do sumy prawidłowych wyników pozytywnych oraz błędnych wyników negatywnych, który można rozumieć jako zdolność modelu do poprawnego etykietowania(patrz wzór \ref{eqn:rec}),
+		\begin{equation}
+			\mathbf{recall} = \frac{TP}{TP + FN}
+			\label{eqn:rec}
+		\end{equation}
+	\item \textbf{Precyzja} - stosunek prawidłowych wyników pozytywnych do sumy prawidłowych wyników pozytywnych oraz błędnych wyników pozytywnych, który można rozumieć jako zdolność modelu do niepoprawnej klasyfikacji próbek negatywnych jako pozytywne(patrz wzór \ref{eqn:prec}),
+		\begin{equation}
+			\mathbf{precision} = \frac{TP}{TP + FP}
+			\label{eqn:prec}
+		\end{equation}
+	\item \textbf{miara \textit{F}} - będąca średnią ważoną z czułości i precyzji(patrz wzór \ref{eqn:fscore}).
+		\begin{equation}
+			\mathbf{F1}= \frac{2 * precision * recall}{precision + recall}
+			\label{eqn:fscore}
+		\end{equation}
+\end{itemize}
 
+\section{Splotowe sieci neuronowe}
 
+Splotowe, inaczej konwolucyjne, sieci neuronowe (ang. \textit{CNN - convolutional neural networks}) stanowią wynik badań nad korą wzrokową i od 1980 roku są używane w zadaniach rozpoznawania obrazów\cite{hands_on}. Podstawową różnicą w stosunku do sieci neuronowych jest stosowanie wielowymiarowej operacji splotu, realizowanej za pomocą szeregu filtrów, których to parametry dobierane są podczas trenowania sieci. Pozwala to siecią konwolucyjnym na nie przetwarzanie obrazów piksel po pikselu, a raczej poprzez zauważanie ogólnych cech obrazu i budowaniu z nich nowych struktur. \\
+
+W analizie matematycznej operacją splotu(reprezentowana jako $*$) dwóch funkcji $f$ i $g$, jest trzecia funkcja $s$, patrz wzór \ref{eqn:splot}:
+\begin{equation}
+	\begin{split}
+		s(t) = (f * g)(t) & = \int_{-\infty}^{\infty}f(\tau)g(t-\tau)d\tau =\\
+						  & =\int_{-\infty}^{\infty}f(t-\tau)g(\tau)d\tau
+	\end{split}
+	\label{eqn:splot}
+\end{equation}
+, a w przypadku operacji dyskretnych, patrz wzór \ref{eqn:splot_d}:
+\begin{equation}
+	s(t)=(f*g)(t)=\sum_{\tau = -\infty}^{\infty}f(\tau)(g-\tau)
+	\label{eqn:splot_d}
+\end{equation}
+W literaturze opisującej sieci neuronowych przyjęło się określać $f(\tau)$ jako wejście, $g(t - \tau)$ jako jądro lub filtr(z ang. \textit{kernel}, \textit{filter}), a wynik samej operacji jako mapę atrybutów lub aktywacji (z ang. \textit{feature map}, \textit{activation map})\cite{piczak}. Zadanie dla typowego problemu klasyfikacji obrazów, operującego na dwuwymiarowym obrazie wejściowym $M$ przy pomocy filtra $K$ z założeniem wykorzystania wielowymiarowego splotu $S(i, j)$, można sformułować następująco \ref{eqn:splot_mk}:
+\begin{equation}
+	\begin{split}
+	S(i, j) & = (M*K)(i,j)=\sum_{k}^{}\sum_{l}^{}M(k,l)K(i-k,j-l) \\
+		    & = (K*M)(i,j)=\sum_{k}^{}\sum_{l}^{}M(i-k,j-l)K(k,l)
+	\end{split}
+	\label{eqn:splot_mk}
+\end{equation}
+
+\section{Uczenie głębokie}
+
+Budowa sieci splotowych, a dokładnie fakt, że nie wymagały one połączeń pomiędzy wszystkimi neuronami w każdej z warstw oraz fakt, że zastosowanie operacji splotu, pozwala na zmniejszenie wymiarów zdjęcia pozwoliło budować sieci o większej ilości warstw ukrytych \cite{python_ml}. Za pierwszą pracę z stosującą uczenie głębokie(funkcje splotu, wsteczną propagację) uważa się tą 1989 roku, której autorzy stworzyli model rozpoznający kody pocztowe\cite{lecun}. Sam model okazał się sukcesem, problemem był jednak czas uczenia - $\sim$3 dni. Z racji jednak że w ostatnim czasie moc obliczeniowa komputerów wzrosła kilkukrotnie, oraz dodatkowo same zbiory danych zwiększyły swoje rozmiary i jakość - uczenie głębokie staje coraz popularniejsze\cite{hands_on}.
 
 
 
