@@ -15,3 +15,41 @@
 
 \usepackage{multirow}
 \usepackage{subfig}
+
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+
+\usepackage{float}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+\lstdefinestyle{mystyle}{
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},                
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,
+	columns=fullflexible,
+	frame=single,            
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\renewcommand{\UrlFont}{\small\tt}
+\renewcommand\lstlistingname{Listing}
+\renewcommand\lstlistlistingname{Spis listingów}
