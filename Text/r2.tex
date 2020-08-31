@@ -29,7 +29,7 @@ Tym samym można rozumieć uczenie maszynowe jako nowy paradygmat programowania.
 \begin{figure}[h!]
 	\includegraphics[width=10cm]{uczenie_maszynowe.pdf}
 	\centering
-	\caption{Uczenie maszynowe: nowy model programowania}
+	\caption{Uczenie maszynowe - nowy paradygmat programowania}
 	\label{fig:uczenie_maszynowe}
 \end{figure}
 \\
@@ -46,7 +46,7 @@ Popularyzację tego terminu przypisuję się do wykładu autorstwa Johna Mashey'
 \\
 \end{itemize}
 
-Jednym z kluczowych zjawisk przyczyniającym się do procesu nagłego przyrostu ilości i źródeł danych jest Internet przedmiotów (ang. \textit{Internet of Things}\cite{iot}). Według tej koncepcji, różnego typu urządzenia osadzone w urządzeniach codziennego użytku(np. odkurzacze, żarówki, instalacje grzewcze), czy też w maszynach przemysłowych, zbierają dane o otoczeniu, czy samym procesie w którym uczestniczą, a ponadto mają możliwość komunikacji pomiędzy sobą, ale również z jednostką centralną jeśli taka występuje. Wprowadza to nowy wymiar w możliwościach automatyzacji procesów i tworzy nową przestrzeń do tworzenia się złożonych, inteligentnych systemów.
+Jednym z kluczowych zjawisk przyczyniającym się do procesu nagłego przyrostu ilości i źródeł danych jest Internet przedmiotów (ang. \textit{Internet of Things}\cite{iot}). Według tej koncepcji, różnego typu urządzenia osadzone w urządzeniach codziennego użytku(np. odkurzacze, żarówki, instalacje grzewcze), czy też w maszynach przemysłowych, zbierają dane o otoczeniu, czy samym procesie w którym uczestniczą, a ponadto mają możliwość komunikacji pomiędzy sobą, ale również z jednostką centralną, jeśli taka występuje. Wprowadza to nowy wymiar w możliwościach automatyzacji procesów i kreuję nową przestrzeń do tworzenia się złożonych, inteligentnych systemów.
 
 \section{Rodzaje systemów uczenia maszynowego}
 
@@ -74,7 +74,7 @@ Na zbiór uczący $Z_{u}$ składa się zbiór $n$ wektorów, gdzie każdy z nich
 	Z_{u}=\left \{(x_{1},y_{1}),...,(x_{n},y_{n})\right \}
 	\label{eqn:zbiot_t}
 \end{equation}
-I tak w powyższym równaniu\ref{eqn:zbiot_t}) $i$-ty wektor oznaczony byłby jako $x_{i}$ i odpowiadałaby mu etykieta oznaczona jako $y_{i}$. W zależności od typu danych przechowywanych pod etykietą będziemy mieć do czynienia z zadaniem klasyfikacji(etykieta należy do skończonego i przeliczalnego zbioru) lub regresji(wartości przyjmowane przez etykietę należą do przestrzeni ciągłej). Ważne żeby dodać że na wektor $x_{i}$ może składać się $m$-liczb, gdzie każdą z tych liczb będziemy nazywać atrybutem lub cechą danego wektora(patrz wzór \ref{eqn:wek}):
+I tak w powyższym równaniu(patrz wzór \ref{eqn:zbiot_t}) $i$-ty wektor oznaczony byłby jako $x_{i}$ i odpowiadałaby mu etykieta oznaczona jako $y_{i}$. W zależności od typu danych przechowywanych pod etykietą będziemy mieć do czynienia z zadaniem klasyfikacji(etykieta należy do skończonego i przeliczalnego zbioru) lub regresji(wartości przyjmowane przez etykietę należą do przestrzeni ciągłej). Ważne żeby dodać że na wektor $x_{i}$ może składać się $m$-liczb, gdzie każdą z tych liczb będziemy nazywać atrybutem lub cechą danego wektora(patrz wzór \ref{eqn:wek}):
 \begin{equation}
 	x_{i} = \left \{ x_{1,m}, ..., x_{i,m} \right \}
 	\label{eqn:wek}
@@ -135,7 +135,7 @@ W niniejszej pracy będę zajmował się zadaniem należącym do problemów klas
 	y=\left \{0, 1\right \}
 	\label{eqn:zbiot_y}
 \end{equation}
-Klasy $0$ i $1$ w powyższym wzorze\ref{eqn:zbiot_y} są przykładowe i bardziej niż ich wartość interesuje Nas liczność zbioru $y$. Tym samym mając zdefiniowaną przestrzeń możliwych wartości modelu można zdefiniować szereg miar, które są wykorzystywane do oceny jego wyników. Podstawowym elementem zadania ewaluacji modelu w zadaniu klasyfikacji binarnej jest macierz, tablica błędów widoczna w tabeli \ref{tab:macierz_bledow}. Do jej skonstruowania potrzebujemy oczywiście przetestować działanie naszego modelu na zbiorze testowym $Z_{t}$. Poszczególnym reprezentantom tego zbioru, przypisywane są pozytywne lub negatywne etykiety, teraz w zależności od tego czy dany element zbioru $x$ był faktycznie pozytywny czy negatywny można go wpisać w macierz błędów \ref{tab:macierz_bledow}.
+Klasy $0$ i $1$ w powyższym wzorze \ref{eqn:zbiot_y} są przykładowe i bardziej niż ich wartość interesuje Nas liczność zbioru $y$. Tym samym mając zdefiniowaną przestrzeń możliwych wartości modelu można zdefiniować szereg miar, które są wykorzystywane do oceny jego wyników. Podstawowym elementem zadania ewaluacji modelu w zadaniu klasyfikacji binarnej jest macierz, tablica błędów widoczna w tabeli \ref{tab:macierz_bledow}. Do jej skonstruowania potrzebujemy oczywiście przetestować działanie naszego modelu na zbiorze testowym $Z_{t}$. Poszczególnym reprezentantom tego zbioru, przypisywane są pozytywne lub negatywne etykiety, teraz w zależności od tego czy dany element zbioru $x$ był faktycznie pozytywny czy negatywny można go wpisać w macierz błędów \ref{tab:macierz_bledow}.
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{c|c|c|}
@@ -197,7 +197,7 @@ W analizie matematycznej operacją splotu(reprezentowana jako $*$) dwóch funkcj
 	s(t)=(f*g)(t)=\sum_{\tau = -\infty}^{\infty}f(\tau)(g-\tau)
 	\label{eqn:splot_d}
 \end{equation}
-W literaturze opisującej sieci neuronowych przyjęło się określać $f(\tau)$ jako wejście, $g(t - \tau)$ jako jądro lub filtr(z ang. \textit{kernel}, \textit{filter}), a wynik samej operacji jako mapę atrybutów lub aktywacji (z ang. \textit{feature map}, \textit{activation map})\cite{piczak}. Zadanie dla typowego problemu klasyfikacji obrazów, operującego na dwuwymiarowym obrazie wejściowym $M$ przy pomocy filtra $K$ z założeniem wykorzystania wielowymiarowego splotu $S(i, j)$, można sformułować następująco \ref{eqn:splot_mk}:
+W literaturze opisującej sieci neuronowych przyjęło się określać $f(\tau)$ jako wejście, $g(t - \tau)$ jako jądro lub filtr(z ang. \textit{kernel}, \textit{filter}), a wynik samej operacji jako mapę atrybutów lub aktywacji (z ang. \textit{feature map}, \textit{activation map})\cite{piczak}. Zadanie dla typowego problemu klasyfikacji obrazów, operującego na dwuwymiarowym obrazie wejściowym $M$ przy pomocy filtra $K$ z założeniem wykorzystania wielowymiarowego splotu $S(i, j)$, można sformułować następująco(patrz wzór \ref{eqn:splot_mk}):
 \begin{equation}
 	\begin{split}
 	S(i, j) & = (M*K)(i,j)=\sum_{k}^{}\sum_{l}^{}M(k,l)K(i-k,j-l) \\
@@ -217,9 +217,9 @@ Dalsza demokratyzacja uczenia głębokiego w postaci serwisu \textit{kaggle.com}
 
 \subsection{Transfer Learning}
 
-Jedną z najpopularniejszych technik w uczeniu głębokim jest technika Transfer Learningu, która to pozwala na ponowne wykorzystanie gotowego i nauczonego modelu do rozpatrzeniu nowego problemu \cite{hands_on}. Wyobraźmy sobie przykład w którym posiadamy klasyfikator bardzo dobrze rozróżniający psy od kotów. My sami zaś chcemy rozwiązać zadanie rozpoznawania psów, kotów i ludzi. Możemy wykorzystując metodologie Transfer Learning skorzystać z modelu rozpoznającego psy i koty jako z bloczka budulcowego, tym samym upraszczając sobie zadanie, nie mówiąc już o tym że znacząco oszczędzamy na czasie.
+Jedną z najpopularniejszych technik w uczeniu głębokim jest technika transferu wiedzy(z ang. \textit{transfer learning}), która to pozwala na ponowne wykorzystanie gotowego i nauczonego modelu do rozpatrzeniu nowego problemu \cite{hands_on}. Wyobraźmy sobie przykład w którym posiadamy klasyfikator bardzo dobrze rozróżniający psy od kotów. My sami zaś chcemy rozwiązać zadanie rozpoznawania psów, kotów i ludzi. Możemy wykorzystując opisywaną metodologie skorzystać z modelu rozpoznającego psy i koty jako z bloku budulcowego dla naszego rozwiązania, tym samym upraszczając sobie zadanie, nie mówiąc już o tym, że znacząco oszczędzamy na czasie. \\
 
-Oprócz wykorzystania całego modelu, możemy również posłużyć się częścią architektury danego rozwiązania. Chodzi mi o sytuację w której zamrażamy możliwość uczenia dla wag z kilku pierwszych warstw jakiegoś modelu uczenia głębokiego. Warstwy te, jak ustaliliśmy już wcześniej, odpowiedzialne są na definiowanie bardzo prostych kształtów, zapamiętanie ich powinno \textit{przenieść} tą własność na model docelowy którego nasz model jest jedynie częścią \cite{python_ml}.
+Oprócz wykorzystania całego modelu, możemy również posłużyć się częścią architektury danego rozwiązania. Chodzi mi o sytuację, w której zamrażamy możliwość uczenia się(zmieniania się) dla wag z kilku pierwszych warstw. Warstwy te, jak ustaliliśmy już wcześniej, odpowiedzialne są za definiowanie bardzo prostych kształtów i ich zapamiętanie. Przez co ich zamrożenie powinno \textit{przenieść} tą własność na model docelowy którego nasz model jest jedynie częścią \cite{python_ml}.
 
 
 
