@@ -42,7 +42,8 @@ Popularyzację tego terminu przypisuję się do wykładu autorstwa Johna Mashey'
 \begin{itemize}
 	\item \textbf{rozmiar} - dane są zbyt duże by mieściły się na standardowych dyskach twardych,
 	\item \textbf{różnorodność} - dane pochodzą z różnych źródeł, są niejednorodne i słabo ustrukturyzowane,
-	\item \textbf{prędkość} - tempo napływu nowych danych jest znaczące, co w rezultacie utrudnia ich analizowanie.\\
+	\item \textbf{prędkość} - tempo napływu nowych danych jest znaczące, co w rezultacie utrudnia ich analizowanie.
+\\
 \end{itemize}
 
 Jednym z kluczowych zjawisk przyczyniającym się do procesu nagłego przyrostu ilości i źródeł danych jest Internet przedmiotów (ang. \textit{Internet of Things}\cite{iot}). Według tej koncepcji, różnego typu urządzenia osadzone w urządzeniach codziennego użytku(np. odkurzacze, żarówki, instalacje grzewcze), czy też w maszynach przemysłowych, zbierają dane o otoczeniu, czy samym procesie w którym uczestniczą, a ponadto mają możliwość komunikacji pomiędzy sobą, ale również z jednostką centralną jeśli taka występuje. Wprowadza to nowy wymiar w możliwościach automatyzacji procesów i tworzy nową przestrzeń do tworzenia się złożonych, inteligentnych systemów.
@@ -214,6 +215,11 @@ się z ograniczonych maszyn Boltzmanna \cite{hinton}. Pokazali oni że czas od p
 
 Dalsza demokratyzacja uczenia głębokiego w postaci serwisu \textit{kaggle.com}, który to hostuje nie tylko zbiory danych, ale również konkursy na najlepsze modele, w połączeniu z łatwością w korzystaniu z technologii CUDA(z ang. \textit{Compute Unified Device Architecture}) już nie tylko w języku C++, ale również Python - sprawia że odpalanie modelów sieci głębokich jest proste i równe szybkie co modeli opartych o klasyczne uczenie maszynowe\cite{deep}.
 
+\subsection{Transfer Learning}
+
+Jedną z najpopularniejszych technik w uczeniu głębokim jest technika Transfer Learningu, która to pozwala na ponowne wykorzystanie gotowego i nauczonego modelu do rozpatrzeniu nowego problemu \cite{hands_on}. Wyobraźmy sobie przykład w którym posiadamy klasyfikator bardzo dobrze rozróżniający psy od kotów. My sami zaś chcemy rozwiązać zadanie rozpoznawania psów, kotów i ludzi. Możemy wykorzystując metodologie Transfer Learning skorzystać z modelu rozpoznającego psy i koty jako z bloczka budulcowego, tym samym upraszczając sobie zadanie, nie mówiąc już o tym że znacząco oszczędzamy na czasie.
+
+Oprócz wykorzystania całego modelu, możemy również posłużyć się częścią architektury danego rozwiązania. Chodzi mi o sytuację w której zamrażamy możliwość uczenia dla wag z kilku pierwszych warstw jakiegoś modelu uczenia głębokiego. Warstwy te, jak ustaliliśmy już wcześniej, odpowiedzialne są na definiowanie bardzo prostych kształtów, zapamiętanie ich powinno \textit{przenieść} tą własność na model docelowy którego nasz model jest jedynie częścią \cite{python_ml}.
 
 
 
