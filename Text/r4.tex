@@ -12,7 +12,7 @@ W pracy posłużyłem się dwoma zbiorami danych:
 
 \subsection{CASIA v.2}
 
-Opisywany zbiór posiada $12 614$ zdjęć, z czego $7 941$ z nich stanowi zdjęcia oryginalne, a kolejne $5 123$ to zdjęcia zmanipulowane(patrz rysunek \ref{fig:casia} ). Zgodnie z artykułem \cite{casia} elementy zbioru różnią się wielkością od $320 \times 240$, aż do $800 \times 600$ pikseli. Manipulacja zdjęć jest wykonana poprzez wycinanie, kopiowanie i rozmazanie. Twórcy zbioru danych podzielili go na $9$ kategorii: scena, zwierzę, architektura, postać, roślina, artykuł, natura, wnętrze i tekstura - na potrzeby pracy interesuje Nas tylko podział na dane prawdziwe i zmanipulowane. Dodatkowo zdjęcia zawarte w zbiorze zapisane są jako *.JPEG, *.BMP, *.TIFF.
+Opisywany zbiór posiada $12 614$ zdjęć, z czego $7 941$ z nich stanowi zdjęcia oryginalne, a kolejne $5 123$ to zdjęcia zmanipulowane(patrz rysunek \ref{fig:casia} ). Zgodnie z artykułem \cite{casia} elementy zbioru różnią się wielkością od $320 \times 240$, aż do $800 \times 600$ pikseli. Manipulacja zdjęć jest wykonana poprzez wycinanie, kopiowanie i rozmazanie. Twórcy zbioru danych podzielili go na $9$ kategorii: scena, zwierzę, architektura, postać, roślina, artykuł, natura, wnętrze i tekstura - na potrzeby pracy interesuje nas tylko podział na dane prawdziwe i zmanipulowane. Dodatkowo zdjęcia zawarte w zbiorze zapisane są jako *.JPEG, *.BMP, *.TIFF.
 
 \begin{figure}[h!]
 	\includegraphics[width=7cm]{casia.png}
@@ -34,7 +34,7 @@ Powyższy zbiór jest liczniejszy - $21 758$ elementów, z czego po $10 879$ nal
 
 \section{Stratyfikowana k-krotna walidacja krzyżowa}
 
-Do przeprowadzenia wiarygodnych eksperymentów i wyliczeniu odpowiednich metryk pracy modeli skorzystałem z k-krotnej stratyfikowanej walidacji krzyżowej. W samej k-krotnej walidacji krzyżowej chodzi po prostu o podział zbioru $Z$ na $k$ równych elementów \cite{hands_on}. Następnie $1$ z tych $k$ zbiorów zostaje zbiorem testowym $Z_{t}$ podczas gdy pozostałe $k-1$ zbiorów zostają zbiorem uczącym $Z_u$. Całe zadanie jest powtarzane $k$ razy. Całość została pokazana na rysunku \ref{fig:walidacja}
+Do przeprowadzenia wiarygodnych eksperymentów i wyliczeniu odpowiednich metryk pracy modeli skorzystałem z k-krotnej stratyfikowanej walidacji krzyżowej. W samej k-krotnej walidacji krzyżowej chodzi po prostu o podział zbioru $Z$ na $k$ równych elementów \cite{hands_on}. Następnie $1$ z tych $k$ zbiorów zostaje zbiorem testowym $Z_{t}$ podczas gdy pozostałe $k-1$ zbiorów zostają zbiorem uczącym $Z_u$. Całe zadanie jest powtarzane $k$ razy. Przykład został pokazany na rysunku \ref{fig:walidacja}
 
 \begin{figure}[h!]
 	\includegraphics[width=5cm]{walidacja.png}
@@ -43,7 +43,7 @@ Do przeprowadzenia wiarygodnych eksperymentów i wyliczeniu odpowiednich metryk 
 	\label{fig:walidacja}
 \end{figure}
 
-Z racji jednak że w zbiorze testowym CASIA \cite{casia} ilość przedstawicieli klas nie jest taka sama - zdecydowałem się na stratyfikowaną wersję k-krotnej walidacji krzyżowej, oznacza to że podczas podziału na podzbiory operacja ta zachowuje oryginalny lub zbliżony do oryginalnego poziom niezbalansowania danych.
+Z racji jednak że w zbiorze testowym CASIA \cite{casia} ilość przedstawicieli klas nie jest taka sama - zdecydowałem się na stratyfikowaną wersję k-krotnej walidacji krzyżowej. Oznacza to, że podczas podziału na podzbiory operacja ta zachowuje oryginalny lub zbliżony do oryginalnego poziom niezbalansowania danych.
 
 \section{Parowe testy statystyczne}
 
@@ -74,7 +74,7 @@ Tym samym poszczególne próbki są rozdzielane ponad lub poniżej hiperpłaszcz
 
 \section{Analiza głównych składowych}
 
-Dla uczącego zbioru danych $Z_{u}$, składającego się z $n$ obserwacji, gdzie każda ma postać ${k_{1}, ..., k_{i}}$ można zdefiniować chmurę punktów, która im odpowiada. Oczywiście, mamy wtedy do czynienia z $n$ punktów w przestrzeni $i$ wymiarowej \cite{pca}. Na potrzeby przykładu można przyjąć że mamy do czynienia z $n=50$ i $i=2$. Celem analiza głównych składowych(z ang.\textit{principal component analysis}- \textit{PCA}) jest taki obrót układu współrzędnych, aby maksymalizować wartość wariancji pierwszej współrzędnej, a następnie drugiej. Obrót ten, ma na celu skonstruowanie nowej przestrzeni, w której to początkowe współrzędne są najważniejsze. Graficzny przykład omawianej operacji widoczny jest na rysunku \ref{fig:pca}.
+Dla uczącego zbioru danych $Z_{u}$, składającego się z $n$ obserwacji, gdzie każda ma postać ${k_{1}, ..., k_{i}}$ można zdefiniować chmurę punktów, która im odpowiada. Oczywiście, mamy wtedy do czynienia z $n$ punktów w przestrzeni $i$ wymiarowej \cite{pca}. Na potrzeby przykładu można przyjąć że mamy do czynienia z $n=50$ i $i=2$. Celem analiza głównych składowych(z ang.\textit{principal component analysis}- \textit{PCA}) jest taki obrót układu współrzędnych, aby maksymalizować wartość wariancji pierwszej współrzędnej, a następnie drugiej i tak dalej. Obrót ten, ma na celu skonstruowanie nowej przestrzeni, w której to początkowe współrzędne są najważniejsze. Graficzny przykład omawianej operacji widoczny jest na rysunku \ref{fig:pca}.
 
 \begin{figure}[h!]
 	\centering
@@ -89,4 +89,4 @@ Dla uczącego zbioru danych $Z_{u}$, składającego się z $n$ obserwacji, gdzie
 
 Architektura splotowej sieci neuronowej VGG Net została zaproponowana na przełomie 2014 i 2015 roku, przez K.  Simonyan i A. Zisserman \cite{vgg}. Wykorzystywała ona 19 warstw oraz bardzo małe jak na te czasy filtry splotowe($3 \times 3$). Sam skok splotu, jak i jego wypełnienie(z ang. \textit{padding}) wynosiło 1 piksel. Takie potraktowanie danych pozwoliło uzyskać mapy aktywacji posiadające takie same rozdzielczości co na wejściach warstw splotowych. Zabieg ten spowodował że wydłużanie łańcucha takich połączeń stało się bardzo proste. \\
 
-Ważnym punktem tej architektury i towarzyszącej jej pracy naukowej \cite{vgg} jest zauważenie przez autorów że moduł składający się z 3 warstw $3 \times 3$ ma efektywne pole postrzegania takie jak pojedyncza warstwa $7 \times 7$., przy używaniu dużo mniejszej liczby parametrów praz używaniu trzech nieliniowości zamiast jednej. Wniosek ten sprawił że w dalszych pracach w dziedzinie można zauważyć ewidentne zwrócenie się w stronę wykorzystywania większej ilości warstw z coraz mniejszymi wielkościami filtrów.
+Ważnym punktem tej architektury i towarzyszącej jej pracy naukowej \cite{vgg} jest zauważenie przez autorów, że moduł składający się z 3 warstw $3 \times 3$ ma efektywne pole postrzegania takie jak pojedyncza warstwa $7 \times 7$, przy używaniu dużo mniejszej liczby parametrów oraz trzech nieliniowości zamiast jednej. Wniosek ten sprawił że w dalszych pracach w tej dziedzinie można zauważyć ewidentne zwrócenie się w stronę wykorzystywania większej ilości warstw z coraz mniejszymi wielkościami filtrów.
