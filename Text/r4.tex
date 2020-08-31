@@ -86,3 +86,7 @@ Dla uczącego zbioru danych $Z_{u}$, składającego się z $n$ obserwacji, gdzie
 \end{figure}
 
 \section{VGG Net}
+
+Architektura splotowej sieci neuronowej VGG Net została zaproponowana na przełomie 2014 i 2015 roku, przez K.  Simonyan i A. Zisserman \cite{vgg}. Wykorzystywała ona 19 warstw oraz bardzo małe jak na te czasy filtry splotowe($3 \times 3$). Sam skok splotu, jak i jego wypełnienie(z ang. \textit{padding}) wynosiło 1 piksel. Takie potraktowanie danych pozwoliło uzyskać mapy aktywacji posiadające takie same rozdzielczości co na wejściach warstw splotowych. Zabieg ten spowodował że wydłużanie łańcucha takich połączeń stało się bardzo proste. \\
+
+Ważnym punktem tej architektury i towarzyszącej jej pracy naukowej \cite{vgg} jest zauważenie przez autorów że moduł składający się z 3 warstw $3 \times 3$ ma efektywne pole postrzegania takie jak pojedyncza warstwa $7 \times 7$., przy używaniu dużo mniejszej liczby parametrów praz używaniu trzech nieliniowości zamiast jednej. Wniosek ten sprawił że w dalszych pracach w dziedzinie można zauważyć ewidentne zwrócenie się w stronę wykorzystywania większej ilości warstw z coraz mniejszymi wielkościami filtrów.
